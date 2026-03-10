@@ -1,5 +1,5 @@
-output "instance-name" {
-  description = "name of instance"
-  value       = aws_instance.dolat_instance.tags.Name
-
+output "uniq" {
+  description = "special name"
+  value       = random_string.uniq_name.result
 }
+

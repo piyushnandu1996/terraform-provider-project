@@ -1,11 +1,9 @@
-variable "my_instance_name" {
-  description = "instance name"
+variable "GITHUB_TOKEN" {
+  description = "token for github account"
   type        = string
 }
 
-
-variable "secutrity_group_ports" {
-  description = "ports to add in security group"
-  default     = [22, 80, 443]
-
+variable "repo_name" {
+  description = "github repository name"
+  type        = string
 }

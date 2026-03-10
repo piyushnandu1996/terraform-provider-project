@@ -1,8 +1,8 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "6.34.0"
+    github = {
+      source  = "integrations/github"
+      version = "6.11.1"
     }
 
     random = {
@@ -14,14 +14,10 @@ terraform {
   backend "s3" {
     bucket         = "my-terraform-state-bucket-1996"
     dynamodb_table = "terraform-lock-table"
-    key            = "piyush-ec2/terraform.tfstat"
-    region         = "ap-south-1"
-    use_lockfile   = true
+    key            = "github_ran/terraform.tfstate"
     encrypt        = true
-
+    use_lockfile   = true
+    region         = "ap-south-1"
   }
 }
 
-provider "aws" {
-  region = "ap-south-1"
-}
