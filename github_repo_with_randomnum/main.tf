@@ -18,3 +18,10 @@ resource "github_repository" "my_repo" {
     create_before_destroy = true
   }
 }
+
+
+resource "github_repository_collaborator" "member" {
+  repository = github_repository.my_repo.id
+  username   = "juhinandu1996"
+  permission = "push"
+}
